@@ -1,0 +1,29 @@
+<nav class="fixed-top navbar navbar-light bg-white navbar-expand" aria-label="{{#str}}sitemenubar, admin{{/str}}">
+
+    <button class="navbar-toggler aabtn d-block d-md-none px-1 my-1 border-0" data-toggler="drawers" data-action="toggle" data-target="theme_boost-drawers-primary">
+        <span class="navbar-toggler-icon"></span>
+        <span class="sr-only">{{#str}}sidepanel, core{{/str}}</span>
+    </button>
+
+    <a href="{{{ config.wwwroot }}}" class="navbar-brand d-flex align-items-center m-1 p-1">
+        {{! Asumiendo que el archivo SVG se llama 'logo' o 'isotipo'. Ajusta el nombre del archivo en el parametro pix si es necesario }}
+        <img src="{{#pix}} logo, theme_aprendetek, Logotipo Aprendetek {{/pix}}" class="logo d-none d-sm-inline" alt="Aprendetek">
+        <img src="{{#pix}} isotipo, theme_aprendetek, Isotipo Aprendetek {{/pix}}" class="logo d-inline d-sm-none" alt="Aprendetek">
+    </a>
+
+    <ul class="navbar-nav d-none d-md-flex my-1 px-1">
+        <!-- navbar plugin output / custom menu -->
+    </ul>
+
+    <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item d-none d-lg-block">
+            {{{ output.search_box }}}
+        </li>
+        <li class="nav-item">
+            {{{ output.navbar_plugin_output }}}
+        </li>
+        <li class="nav-item align-items-center d-flex">
+            {{{ output.user_menu }}}
+        </li>
+    </ul>
+</nav>
