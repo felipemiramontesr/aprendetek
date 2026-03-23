@@ -6,9 +6,19 @@
     </button>
 
     <a href="{{{ config.wwwroot }}}" class="navbar-brand d-flex align-items-center m-1 p-1">
-        {{! Asumiendo que el archivo SVG se llama 'logo' o 'isotipo'. Ajusta el nombre del archivo en el parametro pix si es necesario }}
-        <img src="{{#pix}} logo, theme_aprendetek, Logotipo Aprendetek {{/pix}}" class="logo d-none d-sm-inline" alt="Aprendetek">
-        <img src="{{#pix}} isotipo, theme_aprendetek, Isotipo Aprendetek {{/pix}}" class="logo d-inline d-sm-none" alt="Aprendetek">
+        {{# output.get_logo_url }}
+            <img src="{{{ . }}}" class="logo d-none d-sm-inline" alt="{{ sitename }}">
+        {{/ output.get_logo_url }}
+        {{^ output.get_logo_url }}
+            <img src="{{#pix}} logo, theme_aprendetek, Logotipo Aprendetek {{/pix}}" class="logo d-none d-sm-inline" alt="{{ sitename }}">
+        {{/ output.get_logo_url }}
+
+        {{# output.get_compact_logo_url }}
+            <img src="{{{ . }}}" class="logo d-inline d-sm-none" alt="{{ sitename }}">
+        {{/ output.get_compact_logo_url }}
+        {{^ output.get_compact_logo_url }}
+            <img src="{{#pix}} isotipo, theme_aprendetek, Isotipo Aprendetek {{/pix}}" class="logo d-inline d-sm-none" alt="{{ sitename }}">
+        {{/ output.get_compact_logo_url }}
     </a>
 
     <ul class="navbar-nav d-none d-md-flex my-1 px-1">
